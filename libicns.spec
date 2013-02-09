@@ -11,6 +11,8 @@ Source0:	http://downloads.sourceforge.net/icns/%{name}-%{version}.tar.gz
 # Source0-md5:	7a9b74b84ce08c5b11bdee3cad296dd3
 BuildRequires:	jasper-devel
 BuildRequires:	libpng-devel
+BuildRequires:	pkgconfig
+BuildRequires:	which
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
