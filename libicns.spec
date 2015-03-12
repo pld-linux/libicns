@@ -6,7 +6,7 @@ Summary:	Library for manipulating Macintosh icns files
 Summary(pl.UTF-8):	Biblioteka do operowania na plikach icns z Macintosha
 Name:		libicns
 Version:	0.8.1
-Release:	3
+Release:	4
 Group:		Libraries
 # libicns, icns2png and icontainer2icns are under LGPLv2+
 # png2icns is under GPLv2+
