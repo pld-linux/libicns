@@ -6,14 +6,15 @@ Summary:	Library for manipulating Macintosh icns files
 Summary(pl.UTF-8):	Biblioteka do operowania na plikach icns z Macintosha
 Name:		libicns
 Version:	0.8.1
-Release:	6
+Release:	7
 Group:		Libraries
 # libicns, icns2png and icontainer2icns are under LGPLv2+
 # png2icns is under GPLv2+
 License:	LGPL v2+ (library and most tools), GPL v2+ (png2icns)
-Source0:	http://downloads.sourceforge.net/icns/%{name}-%{version}.tar.gz
+Source0:	https://downloads.sourceforge.net/icns/%{name}-%{version}.tar.gz
+Patch0:		%{name}-includes.patch
 # Source0-md5:	7a9b74b84ce08c5b11bdee3cad296dd3
-URL:		http://icns.sourceforge.net/
+URL:		https://icns.sourceforge.net/
 BuildRequires:	jasper-devel
 BuildRequires:	libpng-devel
 BuildRequires:	pkgconfig
@@ -55,6 +56,7 @@ Statyczna biblioteka libicns.
 
 %prep
 %setup -q
+%patch -P0 -p1
 
 %build
 %configure \
@@ -82,7 +84,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/icontainer2icns
 %attr(755,root,root) %{_bindir}/png2icns
 %attr(755,root,root) %{_libdir}/libicns.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libicns.so.1
+%ghost %{_libdir}/libicns.so.1
 %{_mandir}/man1/icns2png.1*
 %{_mandir}/man1/icontainer2icns.1*
 %{_mandir}/man1/png2icns.1*
@@ -90,7 +92,7 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %doc src/apidocs.html
-%attr(755,root,root) %{_libdir}/libicns.so
+%{_libdir}/libicns.so
 %{_includedir}/icns.h
 %{_pkgconfigdir}/libicns.pc
 

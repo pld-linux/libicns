@@ -1,0 +1,10 @@
+--- libicns-0.8.1/icnsutils/png2icns.c.orig	2012-06-14 01:42:07.000000000 +0200
++++ libicns-0.8.1/icnsutils/png2icns.c	2025-09-27 18:12:09.238626727 +0200
+@@ -22,6 +22,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdint.h>
++#include <unistd.h>
+ 
+ #include <errno.h>
+ 
